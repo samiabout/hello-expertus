@@ -1,0 +1,24 @@
+header {
+    width: 100%;
+    /*top: 0px;
+    left: 0px;
+    height: 80px;*/
+    display: block;
+    background: #67a7db;
+}
+div{
+    display: block;
+}
+
+
+header p {
+    font-size:1.5ex;
+    color: aliceblue;
+    text-decoration: aliceblue;
+}
+
+.choices{
+    margin-top: 100px;
+
+
+}
