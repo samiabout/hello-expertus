@@ -13,10 +13,12 @@
 </head>
 <body>
 <header>
-    <p style="display: inline"><%
-        new ElementsToDisplay().getTitle();
+    <jsp:useBean id="homepage" scope="session" class="beans.ElementsToDisplay"></jsp:useBean>
+    <p style="display: inline">
 
-    %></p>
+        <jsp:getProperty property="title" name="homepage" /><br>
+
+    </p>
     <img src="resources/img/Exp_logo_RGB.svg" alt="logo Expertus" class="imgHeader">
 </header>
 <div></div>
