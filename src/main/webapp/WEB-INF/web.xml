@@ -6,7 +6,7 @@
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
     <servlet-name>HelloExpertus</servlet-name>
-    <servlet-class>servlet.HelloExpertus</servlet-class>
+    <servlet-class>servlet.SignForm</servlet-class>
   </servlet>
 
   <servlet-mapping>

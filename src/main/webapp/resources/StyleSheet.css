@@ -4,7 +4,11 @@ header {
     left: 0px;
     height: 80px;*/
     display: block;
-    background: #67a7db;
+    background: rgb(57, 92, 148);
+}
+
+label{
+    text-align: right;
 }
 div{
     display: block;

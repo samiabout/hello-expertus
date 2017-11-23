@@ -12,19 +12,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<header>
-    <%@ include file="WEB-INF/body/header.jsp" %>
+    <img src="resources/img/Exp_logo_RGB.svg" alt="logo Expertus" class="imgHeader">
+    <jsp:useBean id="homepage" scope="session" class="beans.ElementsToDisplay"></jsp:useBean>
+    <p style="display: inline">
 
-</header>
+        <jsp:getProperty property="title" name="homepage" /><br>
 
-<div>
-    <div class="row">
-        <div class="col-sm-4" style="background-color: indigo">.col-sm-6</div>
-        <div class="col-sm-4" style="background-color:blueviolet;">.col-sm-6</div>
-        <div class="col-sm-4" style="background-color: indigo">.col-sm-6</div>
-    </div>
-</div>
-
-
+    </p>
 </body>
-</html>
