@@ -19,4 +19,6 @@
         <jsp:getProperty property="title" name="homepage" /><br>
 
     </p>
+
+   user :  ${sessionScope.user.userName}
 </body>
