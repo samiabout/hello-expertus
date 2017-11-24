@@ -153,7 +153,6 @@ public class Graph {
         minPath.addParent(nodes[0].getName());
         if(dispPath){
             System.out.println();
-            solution.append("best path : "+minPath.getParent()+"<br>");
             System.out.print(minPath.getParent());
             System.out.print(" total distance : "+minPath.getF()+"  nodes : ");
             solution.append(" total distance : "+minPath.getF());
@@ -161,7 +160,27 @@ public class Graph {
             for (int i = nodes.length-1; i >0; i--) {
                 nbPossibilities*=i;
             }
-            solution.append("<br>Exact solution, found between "+nbPossibilities+" possibilities");
+            solution.append("<br>Exact solution, found between <span style=\"color:blue\">"+nbPossibilities+"</span> possibilities"+"<br>");
+            solution.append("best path : "+minPath.getParent()+"<br>");
+            solution.append("<canvas id=\"myCanvas\" width=\"400\" height=\"400\" style=\"border:1px solid #057dff;\">\n</canvas>\n" +
+                    "<script>" +
+                    "var c = document.getElementById(\"myCanvas\");" +
+                    "var ctx = c.getContext(\"2d\");");
+            for (int i = 0; i <nodes.length; i++) {
+                if(minPath.getParent().get(0).equals(nodes[i].getName())){
+                    solution.append("ctx.moveTo("+nodes[i].getX()*4+","+nodes[i].getY()*4+");");
+                }
+            }
+            for (int j = 1; j < minPath.getParent().size(); j++) {
+                for (int i = 0; i <nodes.length; i++) {
+                    if(minPath.getParent().get(j).equals(nodes[i].getName())){
+                        solution.append("ctx.lineTo("+nodes[i].getX()*4+","+nodes[i].getY()*4+");");
+                    }
+                }
+            }
+
+            solution.append( "ctx.stroke();" +
+                    "</script>");
         }
 
         this.nbNodes=openList.size()+closedList.size();
