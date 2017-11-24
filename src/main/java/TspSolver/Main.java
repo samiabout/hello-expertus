@@ -12,12 +12,14 @@ public class Main {
     public String solve(HttpServletRequest request ) {
         ArrayList<Node> nodesL = new ArrayList<>();
         Node[] nodes;
-        for (int i = 1; i < 50; i++) {
-
+        int increment=1;
+        boolean finish=false;
+        while (!finish){
             try {
-                nodesL.add(new Node("val" + i, Integer.parseInt(request.getParameter("x" + i)), Integer.parseInt(request.getParameter("y" + i))));
-
+                nodesL.add(new Node("val" + increment, Integer.parseInt(request.getParameter("x" + increment)), Integer.parseInt(request.getParameter("y" + increment))));
+                increment++;
             } catch (Exception e) {
+                finish=true;
             }
 
         }
