@@ -84,21 +84,23 @@
                 </div>
 
                 <div class="form-group">
-                    <div class="col-sm-offset-6 col-sm-6">
-                        <button type="submit" value="Sign in" class="btn btn-default">Sign Up</button>
-                    </div>
+                <div class="col-sm-offset-6 col-sm-6">
+                    <button type="submit" value="Sign in" class="btn btn-default">Sign Up</button>
                 </div>
+            </div>
 
                 <p style="${form.successC ? 'background-color: greenyellow' : 'background-color:red'}">${form.msgC}</p>
             </fieldset>
         </form>
     </div>
 </div>
+<br>
+<br>
 <div>
-    database:
-    users:
+    Fake database:<br>
+    users:<br>
 <c:forEach items="${users}" var="user">
-    ${user.userName}
+    ${user.userName}<br>
 </c:forEach>
 </div>
 </body>

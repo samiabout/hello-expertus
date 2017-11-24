@@ -12,6 +12,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div class="row">
+    <a href="/expertus">
+    <div class="col-sm-4">
     <img src="resources/img/Exp_logo_RGB.svg" alt="logo Expertus" class="imgHeader">
     <jsp:useBean id="homepage" scope="session" class="beans.ElementsToDisplay"></jsp:useBean>
     <p style="display: inline">
@@ -19,6 +22,12 @@
         <jsp:getProperty property="title" name="homepage" /><br>
 
     </p>
-
-   user :  ${sessionScope.user.userName}
+</div></a>
+<div class="col-sm-4">
+    <p><a href="/expertusTSP">${sessionScope.user.userName}</a> </p>
+</div>
+    <div class="col-sm-4">
+        <p>logout </p>
+    </div>
+</div>
 </body>

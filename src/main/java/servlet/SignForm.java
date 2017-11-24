@@ -14,8 +14,7 @@ import java.io.IOException;
 
 public class SignForm extends HttpServlet {
 
-    public static final String ATT_USER = "user";
-    public static final String ATT_FORM = "form";
+
     public static final String VIEW = "/WEB-INF/forms/Sign.jsp";
 
     public void doGet( HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse ) throws ServletException, IOException{
@@ -23,7 +22,7 @@ public class SignForm extends HttpServlet {
         this.getServletContext().getRequestDispatcher(VIEW).forward( httpServletRequest, httpServletResponse );
     }
 
-    public void doPost( HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse ) throws ServletException, IOException{
+    public void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException{
 
         Sign form = new Sign();
         form.sign(httpServletRequest);

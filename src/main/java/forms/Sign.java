@@ -61,7 +61,7 @@ public class Sign {
             if(ElementsToDisplay.users.get(i).getUserName().equals(userName)){
                 if (ElementsToDisplay.users.get(i).getPassword().equals(password)){
                     successC=true;
-                    msgC="Connection successful";
+                    msgC="Connection successful, click on your user name to access new functionalities";
                     userC=ElementsToDisplay.getUsers().get(i);
                 }
             }

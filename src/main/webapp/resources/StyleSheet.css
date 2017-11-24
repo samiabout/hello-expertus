@@ -20,7 +20,11 @@ header p {
     color: aliceblue;
     text-decoration: aliceblue;
 }
-
+header a {
+    font-size:1.1ex;
+    color: aliceblue;
+    text-decoration: aliceblue;
+}
 .choices{
     margin-top: 100px;
 

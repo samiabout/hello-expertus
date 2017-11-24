@@ -10,6 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="resources/JqueryScript.js" type="text/javascript"></script>
 </head>
 <body>
 <header>
@@ -25,6 +27,20 @@
     </div>
 </div>
 
+<form method="post" action="TSP" class="form-horizontal">
+    <fieldset>
 
+    <button type="button" value="" id="addVal" class="btn btn-default">Add Another Value</button>
+    <div id="p_vals">
+
+    </div>
+
+<div class="form-group">
+    <div class="col-sm-offset-6 col-sm-6">
+        <button type="submit" value="Sign in" class="btn btn-default">Sign Up</button>
+    </div>
+</div>
+</fieldset>
+</form>
 </body>
 </html>
