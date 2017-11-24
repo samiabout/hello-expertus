@@ -31,7 +31,9 @@
 <c:if test="${sessionScope.user != null}">
 This is a Travelling salesman problem solver : <br>
 Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?
-<br>You can add up to 15 cities! (1.3E12 different possible solutions !)
+<br>You can add as many cities as you want!
+    <br> The algorithm found an exact solution for up to 15 cities (1.3E12 different possible solutions !)
+    <br> Over 15 cities, it computes an approximated solution.<br>
 <form method="post" action="expertusTSP" class="form-horizontal">
     <fieldset>
 

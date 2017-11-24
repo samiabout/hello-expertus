@@ -7,7 +7,7 @@ $(document).ready(function() {
     $("title").html("new title");
     $('body').on('click','#addVal', function() {
 
-        if(i<16){
+
             $('#removeVal').remove();
             $('<div class="xy">' +
                 '<label for="p_val' + i +'" class="">Val' + i +'</label>' +
@@ -23,7 +23,7 @@ $(document).ready(function() {
                 '<a href="#" id="removeVal">Remove</a>' ).appendTo(valDiv);
             i++;
 
-        }
+
         return false;
     });
 
