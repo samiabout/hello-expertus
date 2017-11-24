@@ -41,7 +41,7 @@ public class Graph {
         this.nodes=new Node[nodes.length];
         solution.append("list of nodes : <br>");
         for (int i = 0; i < nodes.length; i++) {
-            solution.append(nodes[i].getName()+" "+nodes[i].getX()+" "+nodes[i].getY()+" <br>");
+            solution.append(nodes[i].getName()+" :  x="+nodes[i].getX()+"  y="+nodes[i].getY()+" <br>");
             this.nodes[i]=new Node(nodes[i].getName(),nodes[i].getX(),nodes[i].getY());
         }
         this.heuristic=heuristic;

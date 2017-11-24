@@ -36,6 +36,7 @@ Given a list of cities and the distances between each pair of cities, what is th
     <fieldset>
 
         <button type="button" value="" id="addVal" class="btn btn-default">Add Another Value <br> (random values are suggested)</button>
+        <br><br>
         <div id="p_vals">
 
         </div>
