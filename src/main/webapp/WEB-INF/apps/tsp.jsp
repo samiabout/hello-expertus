@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: sami-
@@ -22,17 +23,19 @@
     <script src="../../resources/JqueryScript.js" type="text/javascript"></script>
 </head>
 <body>
+
 <header>
     <%@ include file="../body/header.jsp" %>
 
 </header>
+<c:if test="${sessionScope.user != null}">
 This is a Travelling salesman problem solver : <br>
 Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?
 <br>You can add up to 15 cities! (1.3E12 different possible solutions !)
 <form method="post" action="expertusTSP" class="form-horizontal">
     <fieldset>
 
-        <button type="button" value="" id="addVal" class="btn btn-default">Add Another Value</button>
+        <button type="button" value="" id="addVal" class="btn btn-default">Add Another Value <br> (random values are suggested)</button>
         <div id="p_vals">
 
         </div>
@@ -45,5 +48,6 @@ Given a list of cities and the distances between each pair of cities, what is th
     </fieldset>
 </form>
 ${solution}
+</c:if>
 </body>
 </html>

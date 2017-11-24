@@ -11,7 +11,7 @@
 <html>
 <head>
     <link type="text/css" rel="stylesheet" href="../../resources/StyleSheet.css">
-    <title>Title</title>
+    <title>Expertus</title>
 </head>
 <body>
 <header>
@@ -21,14 +21,14 @@
 <div class="row">
     <div class="col-sm-6">
         <form method="post" action="expertus">
-            <fieldset>
+            <fieldset <c:if test="${sessionScope.user != null}">disabled</c:if>>
                 <legend>Sign up!</legend>
                 <input type="hidden" name="form" value="signUp">
 
                 <div class="form-group">
                     <label for="username" class="control-label col-sm-6">User Name</label>
                     <div class="col-sm-6">
-                        <input type="text" id="username" name="username" value="<c:out value="${user.userName}"/>"
+                        <input type="text" id="username" name="username" required value="<c:out value="${user.userName}"/>"
                                size="20" maxlength="20"/>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
     <div class="col-sm-6">
 
         <form method="post" action="expertus" class="form-horizontal">
-            <fieldset>
+            <fieldset <c:if test="${sessionScope.user != null}">disabled</c:if>>
                 <legend>Sign in!</legend>
                 <input type="hidden" name="form" value="signIn">
                 <div class="form-group">
@@ -99,8 +99,8 @@
 <div>
     Fake database:<br>
     users:<br>
-<c:forEach items="${users}" var="user">
-    ${user.userName}<br>
+<c:forEach items="${sessionScope.users}" var="eachuser">
+    ${eachuser.userName}<br>
 </c:forEach>
 </div>
 </body>

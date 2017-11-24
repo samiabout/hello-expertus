@@ -31,10 +31,12 @@ public class SignForm extends HttpServlet {
             User newUser = form.signUp( httpServletRequest );
             if(form.isSuccess()){
                 ElementsToDisplay.users.add(newUser);
+
+                HttpSession session = httpServletRequest.getSession();
+                session.setAttribute("users", ElementsToDisplay.getUsers());
             }
             httpServletRequest.setAttribute( "form", form );
             httpServletRequest.setAttribute( "user", newUser );
-            httpServletRequest.setAttribute( "users", ElementsToDisplay.getUsers());
 
             this.getServletContext().getRequestDispatcher(VIEW).forward( httpServletRequest, httpServletResponse );
 
@@ -45,10 +47,10 @@ public class SignForm extends HttpServlet {
             if(form.isSuccessC()){
                 HttpSession session = httpServletRequest.getSession();
                 session.setAttribute( "user", user );
+                session.setAttribute("users", ElementsToDisplay.getUsers());
             }
             httpServletRequest.setAttribute( "form", form );
             httpServletRequest.setAttribute( "user", user );
-            httpServletRequest.setAttribute( "users", ElementsToDisplay.getUsers());
 
             this.getServletContext().getRequestDispatcher(VIEW).forward( httpServletRequest, httpServletResponse );
 

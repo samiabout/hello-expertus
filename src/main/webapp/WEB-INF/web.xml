@@ -4,19 +4,29 @@
 
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
+
     <servlet>
         <servlet-name>HelloExpertus</servlet-name>
         <servlet-class>servlet.SignForm</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>Disconnect</servlet-name>
+        <servlet-class>servlet.Disconnect</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>TSP</servlet-name>
         <servlet-class>servlet.TspForm</servlet-class>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>HelloExpertus</servlet-name>
         <url-pattern>/expertus</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+        <servlet-name>Disconnect</servlet-name>
+        <url-pattern>/disconnect</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>TSP</servlet-name>
         <url-pattern>/expertusTSP</url-pattern>

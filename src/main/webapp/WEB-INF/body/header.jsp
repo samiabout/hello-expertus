@@ -27,7 +27,11 @@
     <p><a href="/expertusTSP">${sessionScope.user.userName}</a> </p>
 </div>
     <div class="col-sm-4">
-        <p>logout </p>
+        <c:if test="${sessionScope.user != null}">
+
+        <a href="/disconnect">
+            <p>logout </p>
+        </a></c:if>
     </div>
 </div>
 </body>
