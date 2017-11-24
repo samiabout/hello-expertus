@@ -25,14 +25,17 @@ public class Main {
         for (int i = 0; i < nodesL.size(); i++) {
             nodes[i] = new Node(nodesL.get(i).getName(), nodesL.get(i).getX(), nodesL.get(i).getY());
         }
-        if (nodes.length <= 15) {
-            Graph graphTest = new Graph(nodes, true, true);
-            return graphTest.getSolution();
+        if(nodes.length>1){
+            if (nodes.length <= 15) {
+                Graph graphTest = new Graph(nodes, true, true);
+                return graphTest.getSolution();
+            }
+            if (nodes.length > 15) {
+                GraphApproximation graphTest = new GraphApproximation(nodes, true, false, 2);
+                return graphTest.getSolution();
+            }
         }
-        if (nodes.length > 15) {
-            GraphApproximation graphTest = new GraphApproximation(nodes, true, false, 2);
-            return graphTest.getSolution();
-        }
+
         return "";
 
 //       Graph graph=new Graph("test.txt");
