@@ -1,9 +1,5 @@
 package TspSolver;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -39,9 +35,9 @@ public class Graph {
     public Graph(Node[] nodes,boolean heuristic, boolean dispPath){
         this.solution=new StringBuilder();
         this.nodes=new Node[nodes.length];
-        solution.append("list of nodes : <br>");
+        //solution.append("list of nodes : <br>");
         for (int i = 0; i < nodes.length; i++) {
-            solution.append(nodes[i].getName()+" :  x="+nodes[i].getX()+"  y="+nodes[i].getY()+" <br>");
+            //solution.append(nodes[i].getName()+" :  x="+nodes[i].getX()+"  y="+nodes[i].getY()+" <br>");
             this.nodes[i]=new Node(nodes[i].getName(),nodes[i].getX(),nodes[i].getY());
         }
         this.heuristic=heuristic;
@@ -155,13 +151,18 @@ public class Graph {
             System.out.println();
             System.out.print(minPath.getParent());
             System.out.print(" total distance : "+minPath.getF()+"  nodes : ");
-            solution.append(" total distance : "+minPath.getF());
+            //solution.append(" total distance : "+minPath.getF());
+            Main.totalDistance =minPath.getF();
             double nbPossibilities=nodes.length;
             for (int i = nodes.length-1; i >0; i--) {
                 nbPossibilities*=i;
             }
-            solution.append("<br>Exact solution, found between <span style=\"color:blue\">"+nbPossibilities+"</span> possibilities"+"<br>");
-            solution.append("best path : "+minPath.getParent()+"<br>");
+            Main.nbPossibilities=nbPossibilities;
+            for (int i = 0; i < nodes.length; i++) {
+                Main.nodesSolution.add(nodes[i]);
+            }
+            //solution.append("<br>Exact solution, found between <span style=\"color:blue\">"+nbPossibilities+"</span> possibilities"+"<br>");
+            //solution.append("best path : "+minPath.getParent()+"<br>");
             solution.append("<canvas id=\"myCanvas\" width=\"400\" height=\"400\" style=\"border:1px solid #057dff;\">\n</canvas>\n" +
                     "<script>" +
                     "var c = document.getElementById(\"myCanvas\");" +

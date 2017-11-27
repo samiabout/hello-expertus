@@ -1,10 +1,5 @@
 package TspSolver;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static java.lang.Math.*;
@@ -41,9 +36,9 @@ public class GraphApproximation {
     public GraphApproximation(Node[] nodes, boolean dispPath, boolean dispCostChange, int schedule){
         this.solution=new StringBuilder();
         this.nodes=new Node[nodes.length];
-        solution.append("list of nodes : <br>");
+        //solution.append("list of nodes : <br>");
         for (int i = 0; i < nodes.length; i++) {
-            solution.append(nodes[i].getName()+" :  x="+nodes[i].getX()+"  y="+nodes[i].getY()+" <br>");
+            //solution.append(nodes[i].getName()+" :  x="+nodes[i].getX()+"  y="+nodes[i].getY()+" <br>");
             this.nodes[i]=new Node(nodes[i].getName(),nodes[i].getX(),nodes[i].getY());
         }
         this.dispCostChange=dispCostChange;
@@ -120,7 +115,8 @@ public class GraphApproximation {
                 swap(swapNodes);//we do not accept new changes.
             }
         }
-        solution.append(" total distance : "+pathLength());
+        Main.totalDistance =pathLength();
+        //solution.append(" total distance : "+pathLength());
         System.out.println(pathLength());
     }
 
@@ -160,11 +156,15 @@ public class GraphApproximation {
         for (int i = nodes.length-1; i >0; i--) {
             nbPossibilities*=i;
         }
-        solution.append("<br>Approximated solution, found between <span style=\"color:blue\">"+nbPossibilities+"</span> possibilities"+"<br>");
-        solution.append("best path : ");
-        for (int i = 0; i < nodes.length; i++) {
-            solution.append(nodes[i].getName()+" ");
+        Main.nbPossibilities=nbPossibilities;
+        for (int i = 0; i <nodes.length; i++) {
+            Main.nodesSolution.add(nodes[i]);
         }
+        //solution.append("<br>Approximated solution, found between <span style=\"color:blue\">"+nbPossibilities+"</span> possibilities"+"<br>");
+        //solution.append("best path : ");
+        //for (int i = 0; i < nodes.length; i++) {
+        //   solution.append(nodes[i].getName()+" ");
+        //}
         solution.append("<br><canvas id=\"myCanvas\" width=\"400\" height=\"400\" style=\"border:1px solid #057dff;\">\n</canvas>\n" +
                 "<script>" +
                 "var c = document.getElementById(\"myCanvas\");" +

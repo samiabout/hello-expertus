@@ -20,7 +20,6 @@ public class TspForm extends HttpServlet {
     public static final String VIEW = "/WEB-INF/apps/tsp.jsp";
 
     public void doGet( HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse ) throws ServletException, IOException{
-
         this.getServletContext().getRequestDispatcher(VIEW).forward( httpServletRequest, httpServletResponse );
     }
 
@@ -31,6 +30,12 @@ public class TspForm extends HttpServlet {
 
 
         httpServletRequest.setAttribute( "solution", solution );
+        httpServletRequest.setAttribute( "solutions", tsp );
+        httpServletRequest.setAttribute( "msg", Main.getMsg() );
+        httpServletRequest.setAttribute( "nodesListe", Main.getNodesL() );
+        httpServletRequest.setAttribute( "totalDistance", Main.getTotalDistance() );
+        httpServletRequest.setAttribute( "nbPossibilities", Main.getNbPossibilities() );
+        httpServletRequest.setAttribute( "nodesSolution", Main.getNodesSolution() );
         httpServletRequest.setAttribute( "users", ElementsToDisplay.getUsers());
 
         this.getServletContext().getRequestDispatcher(VIEW).forward( httpServletRequest, httpServletResponse );

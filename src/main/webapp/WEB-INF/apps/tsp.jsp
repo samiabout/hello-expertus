@@ -7,7 +7,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <!DOCTYPE html>
-<%@page import="beans.ElementsToDisplay"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
 <%@ page isELIgnored="false" %>
@@ -50,7 +49,23 @@ Given a list of cities and the distances between each pair of cities, what is th
         </div>
     </fieldset>
 </form>
-${solution}
+    <div>
+    <c:if test="${nodesListe != null}">
+    Liste des nodes:<br>
+    <c:forEach items="${nodesListe}" var="nodeListe">
+        ${nodeListe.name} : x=${nodeListe.x}  y=${nodeListe.y}<br>
+    </c:forEach><br>
+    <br>${msg}, found between <span style="color:blue">${nbPossibilities}</span> possibilities :<br>
+    total distance : ${totalDistance}<br><br>Best path : <br>
+    <c:forEach items="${nodesSolution}" var="nodeSolution">
+        ${nodeSolution.name} : x=${nodeSolution.x}  y=${nodeSolution.y}<br>
+    </c:forEach>
+    <br>
+    <br>
+    ${solution}
+    </c:if>
+    </div>
 </c:if>
+
 </body>
 </html>
